@@ -1,0 +1,6 @@
+# dsh-turtle-shell 的挂载声明：一条 Host 行（src/host.js）同时带出
+# 系统提示词 section 与 /turtle-shell/api/* 路由；网页半边（client/client.js）
+# 由 package.json 的 dsh.client 声明，负责左侧栏图标和主面板。
+- insert:
+    - id: turtle-shell
+      name: dsh-turtle-shell

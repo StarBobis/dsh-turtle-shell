@@ -1,0 +1,50 @@
+{
+  "name": "dsh-turtle-shell",
+  "version": "0.1.0",
+  "private": true,
+  "description": "叠甲协议：给每一次 DSH 对话加上 L0–L4 证据等级与范围限定文风，并带一个左侧栏入口。",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/host.js",
+  "exports": {
+    ".": "./src/host.js",
+    "./client": "./client/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "src",
+    "client",
+    "locale",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "slots"
+      ],
+      "external": [
+        "react"
+      ]
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "prompt",
+    "style",
+    "turtle-shell"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
