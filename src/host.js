@@ -204,7 +204,8 @@ export function apply(ctx) {
       enabled: state.enabled,
       found: Boolean(hit),
       chars: hit ? hit.text.length : 0,
-      order: hit ? hit.order : null,
+      // 组装后的 section 只保留 name/text/interpolate，order 得用注册时的常量。
+      order: SECTION_ORDER,
       sectionCount: assembly.sections.length,
       contextCount: assembly.contexts.length,
       toolCount: assembly.tools.length,
