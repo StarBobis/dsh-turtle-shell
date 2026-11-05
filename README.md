@@ -45,7 +45,10 @@
 plugin_manager({ action: "install_bundle", target: "C:\\Dev\\dsh-turtle-shell" })
 ```
 
-本地目录安装是链接到 checkout，改完源码后需要重启 DSH 才会加载新的 JavaScript 代际。
+本地目录安装是链接到 checkout：
+
+- 改了 Host 半边（`src/`）：需要重启 DSH 才会加载新的 ESM 代际——Node 按模块 URL 缓存，禁用/启用插件行不会重新执行模块。
+- 改了网页半边（`client/`）：刷新页面即可；没有跑 `pnpm run dev:web` 时不会自动热更。
 
 ## 开发
 
